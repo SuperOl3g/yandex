@@ -1,0 +1,293 @@
+html {
+    font-family: Helvetica, Arial;
+    font-size: 10pt;
+}
+body {
+    margin: 0;
+}
+
+table {
+    overflow: hidden;
+	border-collapse: collapse;
+	border-spacing: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td, th {
+    position: relative;
+    padding: 5px;
+}
+
+input {
+    margin: 15px;
+    margin-right: 10px;
+    outline: 0;
+}
+
+label {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/*фильтрации по прилет/вылет */
+#landingChecker:checked~table .landing {
+    display: inherit;
+}
+#takeoffChecker:checked~table .takeoff {
+    display: inherit;
+}
+
+
+.maintable {
+    border-radius: 8px 8px 0 0;
+    margin: 10px;
+}
+
+
+.maintable-row:first-child {
+    display: inherit;     /*заголовок таблицы должен отображаться всегда*/
+    background-color: #00acdb !important;
+}
+th {
+    border: 0 !important;
+    color: white !important;
+}
+/*разделители колонок в заголовке таблицы*/
+th:not(:last-child):before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 54%;
+    right: 0;
+    top: 23%;
+    background-color: white;
+}
+
+
+
+.time {
+    width: 60px;
+}
+
+
+
+.maintable-cell{
+    border: 1px solid #ccc;    
+    color: #5A5A5A;
+}
+
+.maintable-row {
+    display: none;
+    outline: 0;
+}
+
+/*нечетные строки темнее, пришлось усложинить, чтобы работало с hover эффектом*/
+/*even- потому что учитывается первая строка-заголовок*/
+.maintable-row:nth-child(even) .maintable-cell::before {
+    content: "";
+    position: absolute;
+    background-color: #f2f2f2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+
+/*hover эффект для строк и столбцов в таблице*/
+
+.maintable-row:hover {
+    background-color: #cde4ea;
+}
+
+.maintable-cell:hover::after {
+    content: "";
+    position: absolute;
+    background-color: #cde4ea;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+}
+
+
+
+
+
+
+.company-img {
+    max-height: 40px;
+    max-width : 85px;
+}
+
+.company-name {
+    margin: 4px;
+}
+
+
+
+.icon-takeoff,
+.icon-landing {
+    background-image: url("../img/types.png");
+    height: 19px;
+    width: 24px;
+    display: inline-block;
+}
+
+.icon-takeoff {
+    background-position: 0 0;
+}
+
+.icon-landing {
+    background-position: -24px 0;
+}
+.shortname {
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    .longname {
+        display: none;
+    }
+    .shortname {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .acft {
+        display: none;
+    }   
+}
+
+
+@media (max-width: 550px) {
+    .extra {
+        display: none;
+    }   
+}
+
+
+
+/*===============================================
+ модальное окно с инфой о рейсе
+================================================*/
+
+/*uberhack для всплывающего окна рейса*/
+.maintable-row:focus .info,
+.maintable-row:active .info {
+    display: block;
+}
+
+.info {
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    overflow: hidden;
+    background: white;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px 12px rgba(0,0,0,0.3);
+    padding: 0;
+    display: none;
+}
+
+
+/*крестик в модальном окне*/
+.maintable-row:focus~.exit,
+.maintable-row:active~.exit {
+    display: block;
+}
+.exit {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    margin: -146px 0 0 192px;
+    z-index: 15;
+    display: none;
+}
+.exit::before,
+.exit::after {
+    content: "";
+    width: 5px;
+    height: 20px;
+    background-color: #EAEAEA;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    transform: rotate(45deg);
+}
+.exit:after {
+    transform: rotate(-45deg);
+}
+
+.info-head {
+    background: #00acdb;
+    color: white;
+    position: relative;
+    height: 80px;    
+}
+
+.info-head h2 {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    margin: 0;
+    font-size: 1.4em;    
+}
+
+.info-number,
+.info-company {
+    position: absolute;
+    left: 53%;
+}
+.info-number {
+    top: 22px;
+    font-size: 1.5em;
+}
+.info-company {
+    top: 42px;
+}
+
+.info-head img {
+    max-width: 100px;
+    max-height: 70px;
+    position: absolute;
+    right: 20px;
+    top:50%;
+    transform: translate(0, -50%);
+}
+
+
+.infotable {
+    text-align: left;
+    margin: auto;
+    margin-top: 20px;
+}
+.infotable-row {
+    border-bottom: 1px solid #ccc;
+}
+.infotable-cell {
+    width: 160px;
+    padding: 8px;
+    color: #5A5A5A;
+}
+.infotable-cell:first-child {
+    padding-left: 25px;
+    font-weight: bold;
+}
+.infotable-cell:last-child {
+    padding-right: 25px;
+}

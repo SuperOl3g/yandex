@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Онлайн табло</title>
+    
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+<body> 
+    <input type="checkbox" id="landingChecker" checked><label for="landingChecker">Прилёт</label>
+    <input type="checkbox" id="takeoffChecker" checked><label for="takeoffChecker">Вылет</label>
+    
+    <table class="maintable">
+        <tbody>
+           <tr class="maintable-row">
+               <th class="maintable-cell time">Время по расписанию</th>
+               <th class="maintable-cell number">Рейс</th>
+               <th class="maintable-cell">Тип</th>
+               <th class="maintable-cell company">Компания</th>
+               <th class="maintable-cell">Пункт назначения</th>
+               <th class="maintable-cell">Статус</th>
+               <th class="maintable-cell acft">Тип судна</th>
+               <th class="maintable-cell extra">Примечание</th>
+           </tr>
+            <tr tabindex="1" class="maintable-row landing">
+                <td class="maintable-cell time">
+                    21:10
+                    <span class="date">16.08.2015</span>
+                </td>
+                <td class="maintable-cell number">UN 350</td>
+                <td class="maintable-cell"><i class="icon-landing"></i></td>
+                <td class="maintable-cell company">
+                    <img class="company-img" src="img/Transaero.png">
+                    <p class="company-name">Трансаэро</p>
+                </td>
+                <td class="maintable-cell">Малага</td>
+                <td class="maintable-cell">Приземлился</td>
+                <td class="maintable-cell acft">
+                    <span class="longname">Боинг 737-800</span>
+                    <span class="shortname">B737</span>
+                </td>
+                <td class="maintable-cell extra">Выдача багажа-Лента А12</td>
+                <td class="info">
+                    <div class="info-head">
+                        <h2>Информация о рейсе</h2>
+                        <span class="info-number">UN 350</span>
+                        <span class="info-company">Трансаэро</span>
+                        <img src="img/Transaero.png">
+                    </div>
+                    <table class="infotable">
+                        <tbody>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Вылет</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Направление</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Статус</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Воздушное судно</td>
+                                <td class="infotable-cell">Боинг 737-800</td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Выход</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr tabindex="1" class="maintable-row landing">
+                <td class="maintable-cell time">
+                    21:15
+                    <span class="date">16.08.2015</span>
+                </td>
+                <td class="maintable-cell number">A9 928</td>
+                <td class="maintable-cell"><i class="icon-landing"></i></td>
+                <td class="maintable-cell company">
+                    <img class="company-img" src="img/Georgian_Airways.png">
+                    <p class="company-name">Грузинские Авиалинии</p>
+                </td>
+                <td class="maintable-cell">Тбилиси</td>
+                <td class="maintable-cell">Приземлился</td>
+                <td class="maintable-cell acft">
+                    <span class="longname">Боинг 737-700</span>
+                    <span class="shortname">B737</span>
+                </td>
+                <td class="maintable-cell extra">выдача багажа.Лента А07</td>
+                <td class="info">
+                    <div class="info-head">
+                        <h2>Информация о рейсе</h2>
+                        <span class="info-number">UN 350</span>
+                        <span class="info-company">Трансаэро</span>
+                        <img src="img/Transaero.png">
+                    </div>
+                    <table class="infotable">
+                        <tbody>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Вылет</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Направление</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Статус</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Воздушное судно</td>
+                                <td class="infotable-cell">Боинг 737-800</td>
+                            </tr>
+                            <tr class="infotable-row">
+                                <td class="infotable-cell">Выход</td>
+                                <td class="infotable-cell"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr tabindex="1" class="maintable-row takeoff">
+                <td class="maintable-cell time">
+                    21:40
+                    <span class="date">16.08.2015</span>
+                </td>
+                <td class="maintable-cell number">UN 261</td>
+                <td class="maintable-cell"><i class="icon-takeoff"></i></td>
+                <td class="maintable-cell company">
+                    <img class="company-img" src="img/Transaero.png">
+                    <p class="company-name">Трансаэро</p>
+                </td>
+                <td class="maintable-cell">Ереван</td>
+                <td class="maintable-cell">Задержан до 22:00</td>
+                <td class="maintable-cell acft">
+                    <span class="longname">Боинг 737-800</span>
+                    <span class="shortname">B737</span>
+                </td>
+                <td class="maintable-cell extra"></td>
+                <td class="info">BLABLABLA</td>
+            </tr>
+            <tr tabindex="1" class="maintable-row takeoff">
+                <td class="maintable-cell time">
+                    22:05
+                    <span class="date">16.08.2015</span>
+                </td>
+                <td class="maintable-cell number">A9 927</td>
+                <td class="maintable-cell"><i class="icon-takeoff"></i></td>
+                <td class="maintable-cell company">
+                    <img class="company-img" src="img/Georgian_Airways.png">
+                    <p class="company-name">Грузинские Авиалинии</p>
+                </td>
+                <td class="maintable-cell">Тбилиси</td>
+                <td class="maintable-cell">Идёт посадка</td>
+                <td class="maintable-cell acft">
+                    <span class="longname">Боинг 737-700</span>
+                    <span class="shortname">B737</span>    
+                </td>
+                <td class="maintable-cell extra">Окончание в 21:50. Выход 18</td>
+                <td class="info">BLABLABLA</td>
+            </tr>
+            <tr class="exit"></tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
